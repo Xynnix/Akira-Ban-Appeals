@@ -101,7 +101,7 @@ exports.handler = async function (event, context) {
                 statusCode: 500,
                 body: JSON.stringify({
                     success: false,
-                    error: err
+                    error: err.message +" | "+ err.msg
                 })
             };
         })
