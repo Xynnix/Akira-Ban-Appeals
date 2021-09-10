@@ -80,7 +80,7 @@ exports.handler = async function (event, context) {
     console.log("Discord webhook body")
     console.log(body)
 
-    return await axios.post(`${API_ENDPOINT}/channels/${encodeURIComponent(appeal_channel_id)}`,
+    return await axios.post(`${API_ENDPOINT}/channels/${encodeURIComponent(appeal_channel_id)}/messages`,
         body,
         {
             headers: {
