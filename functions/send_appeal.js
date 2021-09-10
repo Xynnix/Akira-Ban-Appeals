@@ -50,7 +50,7 @@ exports.handler = async function (event, context) {
 
 
 
-    var appeal_channel_id = process.env.REACT_APP_WEBHOOK_URL;
+    var appeal_channel_id = process.env.APPEALS_CHANNEL;
     var body = {
         embed: {
             title: "New Ban Appeal Received",
@@ -80,7 +80,7 @@ exports.handler = async function (event, context) {
     console.log("Discord webhook body")
     console.log(body)
 
-    return await axios.post(`https://discord.com/api/webhooks/${encodeURIComponent(appeal_channel_id)}`,
+    return await axios.post(`${API_ENDPOINT}/channels/${encodeURIComponent(appeal_channel_id)}`,
         body,
         {
             headers: {
@@ -101,7 +101,7 @@ exports.handler = async function (event, context) {
                 statusCode: 500,
                 body: JSON.stringify({
                     success: false,
-                    error: "There was a problem sending your request to the set discord webhook. Please contact and admin or open a support ticket."
+                    error: err
                 })
             };
         })
