@@ -8,5 +8,11 @@
   }, {
     "question": "What will you do to avoid being banned in the future?",
     "character_limit": 1024
+  }, {
+    "question": "What is your age?",
+    "character_limit": 2
+  }, {
+    "question": "Was this a bot or server ban?",
+    "character_limit": 1024
   }
 ]
